@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingHorizontal="40dp"
+    tools:context=".MealActivity">
+
+    <!-- 1. ImageView: Logo -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="Meal Logo"
+        android:src="@drawable/ic_meal_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvCustomerPrompt"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- 2. TextView: Prompt for Checkboxes -->
+    <TextView
+        android:id="@+id/tvCustomerPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Please click:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layoutCustomerCheckboxes" />
+
+    <!-- 3. CheckBoxes Row: Customer 1 & Customer 2 -->
+    <LinearLayout
+        android:id="@+id/layoutCustomerCheckboxes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvCustomerPrompt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvMealPrompt">
+
+        <CheckBox
+            android:id="@+id/cbCustomer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            android:text="Customer 1" />
+
+        <CheckBox
+            android:id="@+id/cbCustomer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            android:text="Customer 2" />
+
+    </LinearLayout>
+
+    <!-- 4. TextView: Prompt for RadioGroup -->
+    <TextView
+        android:id="@+id/tvMealPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Please select one item:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCustomerCheckboxes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rgMeals" />
+
+    <!-- 5. RadioGroup with 3 RadioButtons -->
+    <RadioGroup
+        android:id="@+id/rgMeals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvMealPrompt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirm">
+
+        <RadioButton
+            android:id="@+id/rbBreakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Breakfast" />
+
+        <RadioButton
+            android:id="@+id/rbLunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Lunch" />
+
+        <RadioButton
+            android:id="@+id/rbDinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Dinner" />
+    </RadioGroup>
+
+    <!-- 6. Button: Confirm -->
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Confirm"
+        app:layout_constraintTop_toBottomOf="@+id/rgMeals"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvResult" />
+
+    <!-- 7. TextView: Result Output -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Please select item:"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnReturn" />
+
+    <!-- 8. Button: Return to Game UI -->
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="12dp"
+        android:text="Return"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

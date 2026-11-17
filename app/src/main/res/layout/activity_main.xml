@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="28dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvMenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Menu Hub"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoToGuessGame"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- Button 1: Number Guessing -->
+    <Button
+        android:id="@+id/btnGoToGuessGame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="24dp"
+        android:text="Play Number Guessing"
+        app:layout_constraintTop_toBottomOf="@+id/tvMenuTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoToRps" />
+
+    <!-- Button 2: Rock-Paper-Scissors -->
+    <Button
+        android:id="@+id/btnGoToRps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Play Rock-Paper-Scissors"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToGuessGame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoToBingo" />
+
+    <!-- Button 3: Bingo Game -->
+    <Button
+        android:id="@+id/btnGoToBingo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Play Bingo Game"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToRps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoToMeal" />
+
+    <!-- Button 4: Meal Ordering -->
+    <Button
+        android:id="@+id/btnGoToMeal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Meal Ordering UI"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToBingo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoToConfig" />
+
+    <!-- Button 5: Settings / Configuration -->
+    <Button
+        android:id="@+id/btnGoToConfig"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Settings / Configuration"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToMeal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
